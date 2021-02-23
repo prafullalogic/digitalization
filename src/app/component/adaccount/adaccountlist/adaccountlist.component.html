@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-9">
+    <h2>Manage Ad Account</h2>
+  </div>
+  <div class="col-md-3 text-right">
+    <button type="button" class="btn bg-color hand-cursor text-white" (click)="exportExcel()">Create Ad Account</button>
+  </div>
+</div>
+
+
+<div class="card shadow-lg">
+  <div class="card-body">
+    <p-table [value]="products" (sortFunction)="customSort($event)" [customSort]="true" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]">
+      <ng-template pTemplate="caption">
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input type="text" class="hand-cursor" pInputText placeholder="Search" (input)="searchByBrand()" [(ngModel)]="brandSearch" />
+        </span>
+        <span class="float-right">
+          <button type="button" class="btn bg-color hand-cursor text-white" (click)="exportExcel()">Download Excel</button>
+        </span>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="code">Code<p-sortIcon field="code"></p-sortIcon></th>
+          <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+          <th pSortableColumn="category">Category <p-sortIcon field="category"></p-sortIcon></th>
+          <th pSortableColumn="quantity">Quantity <p-sortIcon field="quantity"></p-sortIcon></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+        <tr>
+          <td>{{product.code}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.category}}</td>
+          <td>{{product.quantity}}</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="paginatorleft">
+        <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+      </ng-template>
+      <ng-template pTemplate="paginatorright">
+        <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+      </ng-template>
+    </p-table>
+
+  </div>
+</div>
+
+

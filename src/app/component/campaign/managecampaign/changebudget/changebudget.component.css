@@ -1,0 +1,51 @@
+.budget-popup .p-dialog {
+    max-width: 725px;
+}
+
+.budget-popup h1{ margin:0 0 14px; padding: 12px 0; text-align: center; position: relative;}
+.budget-popup h1:after{ content: ""; background: #ddd; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 247px; height: 2px;}
+
+.form-wrapper{ margin: 18px 0 7px;}
+.row.budget-row {
+    padding: 18px 0;
+}
+.budget-popup .budget-row .col-md-6:nth-child(1) {
+    text-align: left;
+}
+.budget-popup .budget-row .col-md-6:nth-child(2) {
+    text-align: right;
+}
+.budget-popup .form-group label {
+    font-weight: normal;
+    font-family: inherit;
+    font-size: 16px;
+	margin-bottom: 0;
+}
+.budget-popup .form-group span {
+    font-weight: 600;
+    font-size: 16px;
+    font-family: inherit;
+    padding-left: 5px;
+}
+.budget-popup select {
+    border-radius: 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 10px;
+    height: 40px;
+    -webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.note {
+    max-width: 380px;
+    margin: 0 auto 26px;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+}
+.submit-btn {
+    float: none;
+    display: block;
+    margin: 0 auto;
+}

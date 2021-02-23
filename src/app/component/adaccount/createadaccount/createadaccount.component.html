@@ -1,0 +1,12 @@
+<div class="content-area">
+    <div class="content-box">
+      <h1>Create ad account</h1>
+      <p class="subtext text-center">Create dealership wise Adwords accounts in bulk by uploading the required data in asimple excel format.</p>
+      <p class="subtext subtext1 text-center">Upload Account Details excel here:</p>
+      <div class="upload-box text-center">
+        <p-fileUpload (change)="upload($event)" name="myfile[]" url="./upload.php" multiple="multiple" accept="image/*" maxFileSize="1000000"></p-fileUpload>
+
+      </div>
+      <p class="text-center downld-text"> Don’t have excel format? Download it here <a href="#"><img src="images/preview-btn.png" alt=""></a> </p>
+    </div>
+  </div>

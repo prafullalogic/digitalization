@@ -1,0 +1,31 @@
+<p-button (click)="showModalDialog()" label="Edit Key Word" class="btn-link"></p-button>
+<p-dialog header="Edit Keyword" [(visible)]="displayModal" [modal]="true" [style]="{width: '38vw'}" [baseZIndex]="10000"
+    [draggable]="false" [resizable]="false" class="budget-popup">
+
+    <!-- <div class="budget-popup"> <span class="close">X</span>
+        <h1>Edit Keyword</h1> -->
+        <div class="form-wrapper">
+            <form name="keyword-form" method="post" action="#">
+              <ul class="keyword-list clearfix">
+                  <!-- <li>Buy Toyata near me <a href="#" class="pull-right"><i class="far fa-trash-alt"></i></a></li>
+                  <li>Toyata Car Price <a href="#" class="pull-right"><i class="far fa-trash-alt"></i></a></li>
+                  <li>Toyata Car Buy <a href="#" class="pull-right"><i class="far fa-trash-alt"></i></a></li> -->
+                  <li>Buy Toyata near me <a href="#" class="pull-right"><i><p-button icon="pi pi-trash"></p-button></i></a></li>
+                  <li>Toyata Car Price <a href="#" class="pull-right"><p-button icon="pi pi-trash"></p-button></a></li>
+                  <li>Toyata Car Buy <a href="#" class="pull-right"><p-button icon="pi pi-trash"></p-button></a></li>
+                </ul>
+                <button name="btn-add" id="btn-Add" value="Add" class="btn addkey-btn">Add</button>
+                
+            
+            <input type="submit" name="submit" value="Submit" class="btn create-btn submit-btn">
+          </form>
+          </div>
+    <!-- </div> -->
+
+    <!-- <p class="p-m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. </p> -->
+        <ng-template pTemplate="footer">
+            <p-button icon="pi pi-check" (click)="displayModal=false" label="Yes" class="p-button-text"></p-button>
+            <p-button icon="pi pi-times" (click)="displayModal=false" label="No"></p-button>
+        </ng-template>
+</p-dialog>

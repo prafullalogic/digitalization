@@ -1,0 +1,57 @@
+<div class="content-area">
+  <div class="content-box">
+    <h1>Manange Campaigns</h1>
+    <div class="clearfix">
+      <div class="search-area"> <span>Search</span>        
+        <input type="search" name="search" value="" pInputText (input)="searchByBrand()" [(ngModel)]="brandSearch" placeholder="Dealer Name" class="search-box">
+        <span class="p-input-icon-left btn-search">
+          <i class="pi pi-search"></i>
+        </span>
+      </div>
+      <a href="create-account.html" class="btn create-btn">Create campaigns</a> </div>
+    <div class="account-table">
+      <!-- <p-table [value]="products" (sortFunction)="customSort($event)" [customSort]="true" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]"> -->
+
+        <p-table [value]="campaign" (sortFunction)="customSort($event)" [customSort]="true" [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,15,50]" class="mangacnt">
+
+      
+        <ng-template pTemplate="header" class="table">
+          <tr>
+            <th pSortableColumn="Campaign">Campaign<p-sortIcon field="Campaign"></p-sortIcon></th>
+            <th pSortableColumn="Budget">Budget <p-sortIcon field="Budget"></p-sortIcon></th>
+            <th pSortableColumn="Status">Status <p-sortIcon field="Status"></p-sortIcon></th>
+            <th pSortableColumn="Account">Account<p-sortIcon field="Account"></p-sortIcon></th>
+            <th pSortableColumn="ViewOnPlatform"> </th>
+            <th pSortableColumn="ChangeBudget"></th>
+            <th pSortableColumn="EditKeyWord"></th>           
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-campaign>
+          <tr>
+            <td data-label="Campaign">{{campaign.Campaign}}</td>
+            <td data-label="Budget">{{campaign.Budget}}</td>
+            <td data-label="Status">{{campaign.Status}}</td>
+            <td data-label="Account">{{campaign.Account}}</td>
+            <!-- <td data-label="View On Platform">{{campaign.ViewOnPlatform}}</td>
+            <td data-label="Change Budget">{{campaign.ChangeBudget}}</td>
+            <td data-label="Edit Key Word">{{campaign.EditKeyWord}}</td> -->
+            <td data-label="Change Budget"><app-changebudget></app-changebudget></td>
+            <td data-label="Change Budget"><app-viewonplatform></app-viewonplatform></td>
+            <td data-label="Change Budget"><app-editkeyword></app-editkeyword></td>
+            
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="paginatorleft">
+          <button type="button" class="btn-dwn" (click)="exportExcel()"><img src="../../../../assets/images/icon-excel-white.svg" alt="" class="image"> <span>Download Excel</span></button>
+        </ng-template>
+        <!-- <ng-template pTemplate="paginatorright">
+          <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+        </ng-template> -->
+      </p-table>
+          
+      <!-- <app-changebudget></app-changebudget> -->
+      
+      
+    </div>
+  </div>
+</div>
